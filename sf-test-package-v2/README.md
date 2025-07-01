@@ -1,18 +1,54 @@
-# Salesforce DX Project: Next Steps
+# Migration Testing
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+This project is to test to migrate an Aura component with a dropdown from sandbox to production using the outbond from Salesforce.
 
-## How Do You Plan to Deploy Your Changes?
+Currently I am facing an issue where we can't migrate a component from Sandbox to Producton Org.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+Steps to duplicate the issue.
 
-## Configure Your Salesforce DX Project
+[x] Create an Aura Component with a Dropdown
+[x] Create a Custom Apex Code that extends the VisualEditor.DynamicPickList
+[ ] Create a Managed Package
+[ ] Install the Managed Package into a Sandbox
+[ ] Add the Component into an Lightning Page Example Opportunity Page and select an Option
+[ ] Using Salesforce Outbound Changes, select the Opportunity Page
+[ ] In the Target Org(Production) try to validate the changes
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+## Create a Managed Package
 
-## Read All About It
+1. Make sure we have authenticated into a the DevHub
+2. Run
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+```
+sf package create \
+  --name "TestApp" \
+  --description "My managed package" \
+  --package-type Managed \
+  --path force-app \
+  --target-dev-hub DevHub
+```
+
+```
+sf package list
+```
+
+```
+sf package version create \
+  --package TestApp \
+  --installation-key-bypass \
+  --code-coverage \
+  --wait 20 \
+  --target-dev-hub DevHub
+```
+
+```
+sf package version report --package 04tOK000000jMArYAM --target-dev-hub DevHub
+```
+
+```
+sf package version promote --package 04tOK000000jMArYAM --target-dev-hub DevHub --no-prompt
+```
+
+```
+/packaging/installPackage.apexp?p0=04tOK000000jMArYAM
+```

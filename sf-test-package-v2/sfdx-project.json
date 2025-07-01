@@ -1,12 +1,22 @@
 {
   "packageDirectories": [
     {
+      "versionName": "ver 0.1",
+      "versionNumber": "0.1.0.NEXT",
       "path": "force-app",
-      "default": true
+      "default": true,
+      "package": "TestApp",
+      "versionDescription": "My managed package"
     }
   ],
   "name": "sf-test-package-v2",
-  "namespace": "",
+  "namespace": "EvoluteMessage",
   "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "64.0"
+  "sourceApiVersion": "64.0",
+  "packageAliases": {
+    "TestApp": "0HoOK00000001fF0AQ",
+    "TestApp@0.1.0-1": "04tOK000000jM1BYAU",
+    "TestApp@0.1.0-4": "04tOK000000jM7dYAE",
+    "TestApp@0.1.0-5": "04tOK000000jMArYAM"
+  }
 }

@@ -20,7 +20,7 @@
  * See the Apex Language Reference for more information about Testing and Code Coverage.
  */
 @isTest
-private class ItemListPickListExtendedTest {
+private class AccountDAOTest {
   @TestSetup
   static void setup() {
     List<Account> accounts = new List<Account>();
@@ -33,21 +33,8 @@ private class ItemListPickListExtendedTest {
   @isTest
   static void myUnitTest() {
     Test.startTest();
-    ItemListPickListExtend itemListPickListExtend = new ItemListPickListExtend();
+    List<Account> accounts = new AccountDAO().getAccounts();
     Test.stopTest();
-
-    System.assertEquals(11, itemListPickListExtend.getValues().size());
-  }
-
-  @isTest
-  static void myUnitTest2() {
-    Test.startTest();
-    ItemListPickListExtend itemListPickListExtend = new ItemListPickListExtend();
-    Test.stopTest();
-
-    System.assertEquals(
-      '--select an item--',
-      itemListPickListExtend.getDefaultValue().getLabel()
-    );
+    System.assertEquals(10, accounts.size());
   }
 }
