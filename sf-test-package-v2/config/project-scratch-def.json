@@ -1,6 +1,7 @@
 {
-  "orgName": "rogerio company",
+  "orgName": "TestingOrg",
   "edition": "Developer",
+  "hasSampleData": true,
   "features": ["EnableSetPasswordInApi"],
   "settings": {
     "lightningExperienceSettings": {
