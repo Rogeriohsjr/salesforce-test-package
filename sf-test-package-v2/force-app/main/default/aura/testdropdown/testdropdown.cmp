@@ -1,0 +1,16 @@
+<aura:component
+  implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes"
+  description="Test Dropdown"
+  access="global"
+>
+  <h1>Simple Dropdown</h1>
+  <p>This component is to test the dropdown menu on the builder component</p>
+  <p>We will be migrating this component from Sandbox to Production</p>
+  <p>Selected Item: {!v.selectedItemValue}</p>
+  <aura:attribute
+    access="global"
+    name="selectedItemValue"
+    type="String"
+    default=""
+  />
+</aura:component>

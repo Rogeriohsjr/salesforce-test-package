@@ -1,0 +1,8 @@
+<design:component>
+  <design:attribute
+    name="selectedItemValue"
+    label="Select an Item"
+    description="Choose an item that you would like to display."
+    datasource="apex://ItemListPickListExtend"
+  />
+</design:component>
