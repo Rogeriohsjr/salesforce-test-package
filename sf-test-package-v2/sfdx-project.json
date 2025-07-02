@@ -1,11 +1,12 @@
 {
   "packageDirectories": [
     {
-      "versionName": "ver 0.1",
-      "versionNumber": "0.1.0.NEXT",
+      "versionName": "ver 0.3",
+      "versionNumber": "0.3.0.NEXT",
       "path": "force-app",
       "default": true,
       "package": "TestApp",
+      "ancestorVersion": "HIGHEST",
       "versionDescription": "My managed package"
     }
   ],
@@ -17,6 +18,9 @@
     "TestApp": "0HoOK00000001fF0AQ",
     "TestApp@0.1.0-1": "04tOK000000jM1BYAU",
     "TestApp@0.1.0-4": "04tOK000000jM7dYAE",
-    "TestApp@0.1.0-5": "04tOK000000jMArYAM"
+    "TestApp@0.1.0-5": "04tOK000000jMArYAM",
+    "TestApp@0.2.0-1": "04tOK000000jMKXYA2",
+    "TestApp@0.2.0-2": "04tOK000000jMNlYAM",
+    "TestApp@0.3.0-1": "04tOK000000jMnZYAU"
   }
 }
