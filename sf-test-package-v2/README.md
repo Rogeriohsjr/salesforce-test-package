@@ -44,17 +44,17 @@ sf package version create \
 ### Check the Status of a Package
 
 ```
-sf package version report --package 04tOK000000jMnZYAU --target-dev-hub DevHub
+sf package version report --package 04tOK000000jMsPYAU --target-dev-hub DevHub
 ```
 
 ### Promote a Package Version
 
 ```
-sf package version promote --package 04tOK000000jMnZYAU --target-dev-hub DevHub --no-prompt
+sf package version promote --package 04tOK000000jMsPYAU --target-dev-hub DevHub --no-prompt
 ```
 
 ### Install link
 
 ```
-/packaging/installPackage.apexp?p0=04tOK000000jMnZYAU
+/packaging/installPackage.apexp?p0=04tOK000000jMsPYAU
 ```
